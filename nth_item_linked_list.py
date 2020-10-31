@@ -40,7 +40,7 @@ class Node:
             print(node_pointer)
         return counter
 
-    def delete(self, n):
+    def delete_nth(self, head, n):
 		# delete the nth item, so:
         index_n = counter - n	
         if index_n > self.length:
@@ -54,44 +54,6 @@ class Node:
         return self.head
 
 
-# testing here - creates the original list
-head = Node(1)
-print(head.value)
-
-second = Node(2)
-head.next = second
-print(head.next.value)
-
-third = Node(3)
-second.next = third
-print(second.next.value)
-fourth = Node(4)
-third.next = fourth
-print(third.next.value)
-fifth = Node(5)
-fourth.next = fifth
-print(fourth.next.value)
-print(fifth.next.value) # should be NoneType
-
-print(head.length())
-
-print(head.delete(2))
-
-
-# pointer = pointer.head
-# while(pointer != None):
-#     print(pointer)
-#     pointer = pointer.next
-
-# should do the same as all these prints
-# print(head.value)
-# print(head.next.value)
-# print(head.next.next.value
-# print(head.next.next.next.value)
-# print(head.next.next.next.next.value)
-
-
-
 
 # refactoring
 # single linked list class - got rid of this because would have to add append to set up the list, vs. just nodes
@@ -99,3 +61,34 @@ print(head.delete(2))
 # 	def __init__(self):
 # 		self.head = None
 # 		# self.tail = None
+
+
+# solution
+
+class ListNode:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+class RemoveN:
+    def remove_nth(self, head, n):
+        pointer1 = head
+        pointer2 = head
+
+        for index in range(n):
+            pointer1 = pointer1.next
+            # pointer one is the distance you eventually want to be from the tail
+            # so then move both pointers, and pointer two will be on the index that you want to remove
+            # pointer 1 will be the end of the list, as you step through pointer 2 will be n behind and will hit the one you want to remove
+
+        if not pointer1:
+            # handling edge case where n is the full length of the list
+            # removing head
+            head = head.next
+            return head
+        
+        while pointer1.next:
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next 
+        
+        print(pointer2.val)
