@@ -40,16 +40,32 @@ def merge_linked_lists(self, sorted_list1_head_node, sorted_list2_head_node):
 
 class DoubleLinkedList:
     # have head and tail
-    def __init__(self, head, tail):
-        self.head = head
-        self.tail = tail
+    def __init__(self):
+        # start values are none for the nodes
+        self.head = None
+        self.tail = None
 
-class DoubleListNode:
+    def append(self, value):
+        new_node = DoubleNode(value)
+        new_node.prev = self.tail
+        
+        if(self.tail):
+            self.tail.next = new_node
+
+        if(not self.head):
+            self.head = new_node
+        
+        self.tail = new_node
+
+    def __repr__(self):
+        return f'<self.data>'
+
+class DoubleNode:
     # prev and next
-    def __init__(self, value, previous=None, next=None):
+    def __init__(self, value, previous=None):
         self.value = value
         self.previous = previous
-        self.next = next
+        self.next = None
 
 
 
