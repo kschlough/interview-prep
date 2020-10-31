@@ -21,15 +21,13 @@ def merge_linked_lists(self, sorted_list1_head_node, sorted_list2_head_node):
     else:
         merged_linked_lists = ListNode(sorted_list2_head_node)
 
-
-
-
-# first_node = ListNode(3)
-# -- value 3, next none
-# second_node = ListNode(3, third)
-# third = ListNode(5, fourth)
-# assume not empty, at least one node in each list
-# one can be longer than the other
+# questions & answers:
+    # first_node = ListNode(3)
+    # -- value 3, next none
+    # second_node = ListNode(3, third)
+    # third = ListNode(5, fourth)
+    # assume not empty, at least one node in each list
+    # one can be longer than the other
 
 ###########################################
 # implementation of the linked list
@@ -68,4 +66,4 @@ class DoubleNode:
         self.next = None
 
 
-
+# double linked lists can act handily as both stacks and queues!
