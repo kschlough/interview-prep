@@ -14,8 +14,9 @@ def is_palindrome(num):
     return nums == list(reversed(nums))
 
     # option 2:
-    for index in range(len(nums) // 2 + 1):
-        if nums[index] != nu[-1 - index]:
+    for index in range(len(nums)):
+        if nums[index] != nums[-1 - index]:
+            # step through the opposite side & see if the nums match
             return False
         
     return True
