@@ -37,24 +37,26 @@ def is_overlapping(rect_1, rect_2):
         start_x = rect_1['left_x']
     else:
         start_x = rect_2['left_x']
-    print(start_x) #5
+    print(start_x) 
 
     # find min point of intersection x
     x_min = min((rect_1['left_x'] + rect_1['width']), 
         (rect_2['left_x'] + rect_2['width']) 
-        ) #7
+        )
+    print(x_min) 
     
     # starting y
     if rect_1['bottom_y'] > rect_2['bottom_y']:
         start_y = rect_1['bottom_y']
     else:
         start_y = rect_2['bottom_y']
-    print(start_y) #2
+    print(start_y) 
     
     # find min point of intersection y
-    y_min = ((rect_1['bottom_y'] + rect_1['height']),
+    y_min = min((rect_1['bottom_y'] + rect_1['height']),
         (rect_2['bottom_y'] + rect_2['height'])
-        ) #4
+        ) 
+    print(y_min)
     
     # if min point of intersection is greater than larger start x, they overlap
     
@@ -66,7 +68,9 @@ def is_overlapping(rect_1, rect_2):
             # 'width':
             # 'height':
         }
-        return overlap_rect       
+        return overlap_rect 
+    else:
+        print("No, there is no overlap")      
 
     
 # test cases:
