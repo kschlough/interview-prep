@@ -65,8 +65,8 @@ def is_overlapping(rect_1, rect_2):
         overlap_rect = {
             'left_x': x_min,
             'bottom_y': y_min,
-            # 'width':
-            # 'height':
+            # 'width': 
+            # 'height': 
         }
         return overlap_rect 
     else:
