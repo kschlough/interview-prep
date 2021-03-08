@@ -6,7 +6,7 @@
 # Output: 1
 
 # Example 2:
-# Input: nums = [4,1,2,1,2]
+# Input: nums = [4,1,2,1,2] 
 # Output: 4
 
 # Example 3:
