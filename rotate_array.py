@@ -42,23 +42,23 @@
 
 # pseudocode - 3rd way
 
-
+# option #1 o(n) insertion
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
-
         
-        count = len(nums) - k
         i = 0
-        
-        while i < count:
-            val = nums.pop(0)
-            nums.append(val)
+            
+        while i < k:
+            val = nums.pop()
+            nums.insert(0, val)
             i += 1
             
         return nums
+        
+
         
         
         
