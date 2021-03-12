@@ -16,7 +16,7 @@ class Node:
 
 headnode = Node(9)
 val1 = Node(10)
-head.next = val1
+headnode.next = val1
 val2 = Node(234)
 val1.next = val2
 val3 = Node(9)
@@ -33,29 +33,35 @@ def ll_remove_dupes(head):
     if head == None:
         return None
 
-    while current.next:
+    while current is not None:
         if current.data in dupes_dict:
             dupes_dict[current.data] += 1
+            current = current.next
         else:
             dupes_dict[current.data] = 1
+            currrent = current.next
 
     # reset to start loop again, this time with 2 pointers
     
+    
     # check if you need to change the head first, do this until you don't
-    while dupes_dict[head] > 1:
+    while dupes_dict[head.data] > 1:
         head = head.next
     
     # then set the current & pointer vals
     current = head
     pointer = head.next
 
-    while pointer.next:
+    while pointer is not None:
         # once the head is ok, check the other nodes
         if dupes_dict[pointer.data] > 1:
             current.next = pointer.next
-            current.next
-            pointer.next
+            current = current.next
+            pointer = current.next.next
 
+        else:
+            current = current.next
+            pointer = pointer.next
 
 # call the function
 print(ll_remove_dupes(headnode))
