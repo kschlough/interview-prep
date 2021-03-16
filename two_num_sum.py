@@ -12,3 +12,17 @@ def twoNumberSum(array, targetSum):
 			break
 	
 	return return_pair
+
+
+
+# using hash table (constant time lookup)
+hash_table = {}
+
+for num in array:
+    val = target - num
+    if val in hash_table:
+        return [num, val]
+    else:
+        hash_table[val] = True
+
+return []
