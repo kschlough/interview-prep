@@ -40,38 +40,24 @@ import sys
 
 
 def jumpingOnClouds(c):
-    # first check if c[0] is a 1, because then no jumps
-    if c[0] == 1:
-        return 0
-    
     jump_count = 0
     
-    # starting at c[1] because you start on c[0] and don't jump to get there 
-    current_index = 0   
-    while current_index < len(c):
-        print(c[current_index])
-        current_index += 1
-        # # if there are 2 more numbers available
-        # if c[(current_index+2)]:
-        #     # if 2 more numbers is 0
-        #     if c[current_index+2] == 0:
-        #         current_index += 2
-        #         jump_count += 1
-        #     # if 2 more numbers is 1
-        #     elif c[current_index+1] == 0:
-        #         current_index += 1
-        #         jump_count += 1
-        # # if there's only 1 more number available
-        # if c[(current_index+1)]:
-        #     if c[current_index+1] == 0:
-        #         current_index += 1
-        #         jump_count += 1
-        #     elif c[current_index + 1] != 0:
-        #         return jump_count
-        
-        # return jump_count
-
-print(jumpingOnClouds([0,0,1,0,0,1,0]))
+    i = 0
+    while i < len(c) - 1:
+       
+        # if 2 jumps possible & not 1
+        if i + 2 <= len(c) - 1 and c[i + 2] != 1:
+            jump_count += 1
+            i += 2
+        elif i + 2 <= len(c) - 1 and c[i + 2] == 1:
+            jump_count += 1
+            i += 1
+        elif i + 1 <= len(c) - 1 and c[i + 1] != 1:
+            jump_count += 1
+            i += 1
+            
+    return jump_count
+    # can jump: current + 1 or current + 2
 
 
 if __name__ == '__main__':
